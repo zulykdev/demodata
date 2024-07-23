@@ -10,9 +10,9 @@ import java.time.LocalDate;
 @Table(name = "Cliente")
 @Getter
 @Setter
-public class Client {
+public class Client extends Audit{
 
-    @Id //<- Anotacion ID = PK
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(length = 10)
     private String dni;

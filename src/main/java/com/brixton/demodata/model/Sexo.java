@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Getter
 //@Table(name = "Sexo")
-public class Sexo {
+public class Sexo extends Audit{
 
     @Id
     @Column(name = "id")

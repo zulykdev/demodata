@@ -1,6 +1,6 @@
 package com.brixton.demodata.business;
 
-import com.brixton.demodata.model.Sexo;
+import com.brixton.demodata.model.Sex;
 
 import java.time.LocalDate;
 
@@ -16,7 +16,7 @@ public class Client {
 
     private LocalDate birthdate;
 
-    private Sexo sex;
+    private Sex sex;
 
     private Integer edad;
 

@@ -26,10 +26,11 @@ public class Client extends Audit{
     @Column(length = 200)
     private String address;
 
+    @Column(name = "f_nac")
     private LocalDate birthdate;
 
     @ManyToOne
-    @JoinColumn(name = "sexo_id")
-    private Sexo sexo;
+    @JoinColumn(name = "sexo_id", foreignKey = @ForeignKey(name = "fk_cliente_sexo_id"))
+    private Sex sex;
 
 }

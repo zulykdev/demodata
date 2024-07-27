@@ -1,5 +1,6 @@
 package com.brixton.demodata.controller;
 
+import com.brixton.demodata.entities.Category;
 import com.brixton.demodata.entities.Product;
 import com.brixton.demodata.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,10 @@ public class ProductController {
     public ResponseEntity<String> deleteProduct(@PathVariable Long id) {
         productService.delete(id);
         return new ResponseEntity<String>("category was deleted", HttpStatus.OK);
+    }
+
+    @GetMapping("/allcategories")
+    public Iterable<Category> getAllCategories() {
+        return productService.findAllCategories();
     }
 }

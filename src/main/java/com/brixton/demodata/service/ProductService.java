@@ -1,6 +1,8 @@
 package com.brixton.demodata.service;
 
+import com.brixton.demodata.entities.Category;
 import com.brixton.demodata.entities.Product;
+import com.brixton.demodata.repositories.CategoryRepository;
 import com.brixton.demodata.repositories.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,9 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    CategoryRepository categoryRepository;
+
     public Product saveOrUpdate(Product product) {
         log.info("ingreso a product: {}", product);
         return productRepository.save(product);
@@ -20,6 +25,10 @@ public class ProductService {
 
     public Iterable<Product> findAll() {
         return productRepository.findAll();
+    }
+
+    public Iterable<Category> findAllCategories() {
+        return categoryRepository.findAll();
     }
 
     public Product findById(Long id) {

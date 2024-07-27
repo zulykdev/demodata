@@ -2,18 +2,19 @@ package com.brixton.demodata.service;
 
 import com.brixton.demodata.entities.Product;
 import com.brixton.demodata.repositories.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
+@Slf4j
 public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
     public Product saveOrUpdate(Product product) {
-
+        log.info("ingreso a product: {}", product);
         return productRepository.save(product);
     }
 
